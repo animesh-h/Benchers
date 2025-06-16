@@ -1,0 +1,14 @@
+{
+  "local_source": {
+    "host": "localhost",
+    "port": "5432",
+    "dbname": "db_source",
+    "user": "postgres"
+  },
+  "local_target": {
+    "host": "localhost",
+    "port": "5432",
+    "dbname": "db_target",
+    "user": "postgres"
+  }
+}
