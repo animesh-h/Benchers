@@ -1,28 +1,64 @@
-🔍 Alpha1
+# 🧠 Alpha 1 | Schema Comparison & Difference Export Tool
 
-A Python-based utility to compare database schemas between a source and target PostgreSQL (or other SQLAlchemy-supported) databases.
-It identifies differences in:
+A **powerful Python utility** to compare schemas between a **Source** and **Target** database — built for developers, DBAs, and data engineers to identify inconsistencies with precision.
 
-Tables (missing in source/target)
+---
 
-Columns (missing or extra)
+## ✨ Features
 
-Data types
+✅ **Visual Comparison**:  
+See the differences in a clear, color-coded table format using the `rich` library.
 
-Primary keys
+📊 **Detailed Difference Types**:
+- Missing Tables
+- Missing Columns
+- Column Data Type Mismatches
+- Primary Key Mismatches
+- Unique Constraint Differences
 
-Unique constraints
+📁 **Export to Excel**:  
+Easily export results to an Excel file with multiple tabs:
+- `Summary`
+- `Tables Only in Source/Target`
+- `Column Type Mismatches`
+- And more...
 
-💡 Features:
+🛠 **Built with**:
+- `SQLAlchemy` for DB inspection  
+- `Pandas` for data structuring  
+- `OpenPyXL` for Excel export  
+- `Rich` for elegant terminal output
 
-CLI-based output using rich for colored tabular display
+---
 
-Optional Excel export with categorized sheets (Summary, Tables Only in Source, Columns Only in Target, etc.)
+## 🚀 Ideal For
 
-Modular design for easy extension (e.g., data comparison, foreign key diff)
+- Pre- & Post-deployment validation  
+- CI/CD data integrity checks  
+- Migration consistency checks  
+- Multi-environment (Dev → QA → Prod) schema syncing
 
-📦 Tech Stack:
+---
 
-SQLAlchemy, Pandas, OpenPyXL, Rich
+## 📦 Supported Databases
 
-🚀 Use this tool to ensure schema consistency across environments (Dev → QA → Prod), during migrations, or in CI/CD pipelines.
+Any SQL engine supported by **SQLAlchemy**:  
+PostgreSQL, MySQL, SQLite, MSSQL, and more.
+
+---
+
+## 🖥️ Sample Output
+
+```bash
+📌 Tables Only in Source
+┏━━━━━━━━━━━━━━━━━━━━━━┓
+┃ Table                ┃
+┡━━━━━━━━━━━━━━━━━━━━━━┩
+│ employee_archive     │
+│ legacy_customers     │
+└──────────────────────┘
+
+🟢 Do you want to export these differences to Excel? (y/n):
+```
+
+---
