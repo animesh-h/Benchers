@@ -4,7 +4,7 @@ from rich.console import Console
 from rich.prompt import Prompt
 from rich.panel import Panel
 from config import get_db_config, build_conn_string
-from schemadiff import compare_schemas
+from schema_diff import compare_schemas
 
 console = Console()
 
@@ -36,7 +36,7 @@ def main():
             tgt_conn = build_conn_string(tgt_cfg)
 
             compare_schemas(src_conn, tgt_conn)
-            
+
         console.print()
 
 if __name__ == "__main__":
