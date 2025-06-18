@@ -27,7 +27,7 @@ def get_schema_details(conn_string):
 
     return schema_info
 
-def compare_schemas(src_conn, tgt_conn):
+def compare_rowcount(src_conn, tgt_conn):
     console = Console()
     src_schema = get_schema_details(src_conn)
     tgt_schema = get_schema_details(tgt_conn)

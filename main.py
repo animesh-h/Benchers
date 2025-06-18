@@ -5,6 +5,7 @@ from rich.prompt import Prompt
 from rich.panel import Panel
 from config import get_db_config, build_conn_string
 from schema_diff import compare_schemas
+from rowcount_diff import compare_rowcount
 
 console = Console()
 
@@ -37,6 +38,15 @@ def main():
 
             compare_schemas(src_conn, tgt_conn)
 
+        elif choice == "2":
+            console.print("[yellow]Row Count Comparison[/yellow]")
+            src_cfg = get_db_config("Source")
+            tgt_cfg = get_db_config("Target")
+
+            src_conn = build_conn_string(src_cfg)
+            tgt_conn = build_conn_string(tgt_cfg)
+
+            compare_rowcount(src_conn, tgt_conn)
         console.print()
 
 if __name__ == "__main__":
